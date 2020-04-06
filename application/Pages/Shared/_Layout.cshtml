@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>@ViewData["Title"] - ColourWeb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+    <link href="~/css/site.min.css?rel=dd88c6ef76" rel="stylesheet" />
+    <environment include="Development">
+    </environment>
+    <environment exclude="Development">
+    </environment>
+</head>
+<body class="preload">
+
+    <div id="idnavbutton" class="hamburger hamburger--arrow" onclick="toggleNav();">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </div>
+
+    <div id="idsitetitle" class="mh-sitetitle">
+        <h1>&nbsp;Colours&nbsp;&nbsp;</h1>
+    </div>
+
+    <div id="idnavsidebar" class="sidenav">
+        <br />
+        <div class="navtext">
+            <span class='naviconlink' onclick='window.open("/", "_self"); return false;'><i class='fa fa-home fa-lg fa-fw'></i>Home</span><br />
+        </div>
+        <div class="navtext">
+            <span class='naviconlink' onclick='window.open("/config", "_self"); return false;'><i class='fa fa-edit fa-lg fa-fw'></i>Config</span><br />
+        </div>
+        <div class="navtext">
+            <span class='naviconlink' onclick='window.open("https://azure1.io", "_blank"); return false;'><i class='fa fa-cloud fa-lg fa-fw'></i>Azure&nbsp;1</span><br />
+        </div>
+        <div class="navtext">
+            <span class='naviconlink' onclick='window.open("https://github.com/markharrison", "_blank"); return false;'><i class='fa fa-github fa-lg fa-fw'></i>Mark&nbsp;Harrison</span><br />
+        </div>
+
+    <br />
+    <div class="sidetext">Provided "as is" with no warranties, and confer no rights.</div>
+    <br />
+    </div>
+
+    <div id="idnavoverlay" onclick="toggleNav();"></div>
+
+    <div id="idmaincontent">
+        <div class="container-fluid ">
+            <br /><br /><br /><br />
+            @RenderBody()
+            <hr style="border-top: 2px solid black" />
+            <footer>
+                <p style="float:right">Mark&nbsp;Harrison</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+    <script src="~/js/site.min.js?rel=a65e84a22f"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("body").removeClass("preload");
+        });
+    </script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

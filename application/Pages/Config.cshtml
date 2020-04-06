@@ -1,0 +1,21 @@
+﻿@page
+@model ColourWeb.Pages.ConfigModel
+@{
+    ViewData["Title"] = "Colour Config";
+}
+
+<div class="container-fluid">
+
+    <h4>Config</h4>
+    @using (Html.BeginForm())
+    {
+        <span>API URL:</span>
+        <input size="50" asp-for="APIUrl" /><br /><br />
+        <input type="submit" id="Submit" value="Submit">
+    }
+
+
+    <br /><br />
+
+</div>
+
