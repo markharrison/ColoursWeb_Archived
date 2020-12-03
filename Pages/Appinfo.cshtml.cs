@@ -21,6 +21,7 @@ namespace ColourWeb.Pages
         public void OnGet()
         {
             strConfigHtml += "OS Description: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "<br/>";
+            strConfigHtml += "Framework Description: " + System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription + "<br/>";
             strConfigHtml += "ASPNETCORE_ENVIRONMENT: " + _config.GetValue<string>("ASPNETCORE_ENVIRONMENT") + "<br/>";
             strConfigHtml += "InstrumentationKey: " + _config.GetValue<string>("ApplicationInsights:InstrumentationKey") + "<br/>";
             strConfigHtml += "BuildIdentifier: " + _config.GetValue<string>("BuildIdentifier") + "<br/>";
