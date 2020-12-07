@@ -4,4 +4,4 @@
 
 Updated to .NET 5.0
 
-Also see: <https://github.com/markharrison/ColourAPI>
+Also see: <https://github.com/markharrison/ColoursAPI>
