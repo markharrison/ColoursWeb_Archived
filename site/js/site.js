@@ -46,7 +46,14 @@ function doStart() {
 function doDefaultReady() {
     var vHTML = "";
 
-    APIUrl = decodeURIComponent(readCookie("APIUrl"));
+    APIMode = decodeURIComponent(readCookie("APIMode"));
+    if (APIMode === "Direct") {
+        APIUrl = decodeURIComponent(readCookie("APIUrl"));
+    }
+    else {
+        APIUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + "/getcolour";
+    }
+        
 
     for (var i = 0; i < iBalls; i++) {
         vHTML += "<svg height='30' width='30'><circle id='idBall" + i.toString() + "' cx='15' cy='15' r='12' stroke='black' stroke-width='1' fill='white' /></svg>";
