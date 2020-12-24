@@ -24,7 +24,7 @@ namespace ColourWeb.Pages
             }
             else
             {
-                APIUrl = "https://coloursapi.azurewebsites.net/colour/random";
+                APIUrl = "https://coloursapi.azurewebsites.net/colours/random";
                 APIMode = true;
             }
                 
