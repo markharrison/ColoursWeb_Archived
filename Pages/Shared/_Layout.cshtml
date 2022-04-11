@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>@ViewData["Title"] - ColourWeb</title>
-    <link rel="stylesheet" href="https://www.unpkg.com/fork-awesome@1.2.0/css/fork-awesome.min.css" 
-            integrity="sha384-Ux/4YAAMlStTOIqhvtkrLXf3Qlb10beD6Hr9GAFxGGc8zsIulJZBqA1+/naXWvVZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://www.unpkg.com/fork-awesome@1.2.0/css/fork-awesome.min.css"
+          integrity="sha384-Ux/4YAAMlStTOIqhvtkrLXf3Qlb10beD6Hr9GAFxGGc8zsIulJZBqA1+/naXWvVZ" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-            integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
     <link href="~/css/site.min.css?rel=b8ec918705" rel="stylesheet" />
 </head>
 <body class="preload">
@@ -31,15 +31,18 @@
             <span class='naviconlink' onclick='window.open("/config", "_self"); return false;'><i class='fa fa-edit fa-lg fa-fw'></i>Config</span><br />
         </div>
         <div class="navtext">
+            <span class='naviconlink' onclick='window.open("https://github.com/markharrison/coloursweb", "_blank"); return false;'><i class='fa fa-github fa-lg fa-fw'></i>ColoursWeb</span><br />
+        </div>
+        <div class="navtext">
             <span class='naviconlink' onclick='window.open("https://azure1.dev", "_blank"); return false;'><i class='fa fa-cloud fa-lg fa-fw'></i>Azure&nbsp;1</span><br />
         </div>
         <div class="navtext">
-            <span class='naviconlink' onclick='window.open("https://github.com/markharrison", "_blank"); return false;'><i class='fa fa-github fa-lg fa-fw'></i>Mark&nbsp;Harrison</span><br />
+            <span class='naviconlink' onclick='window.open("https://markharrison.io", "_blank"); return false;'><i class='fa fa-book fa-lg fa-fw'></i>Mark&nbsp;Harrison</span><br />
         </div>
 
-    <br />
-    <div class="sidetext">Provided "as is" with no warranties, and confer no rights.</div>
-    <br />
+        <br />
+        <div class="sidetext">Provided "as is" with no warranties, and confer no rights.</div>
+        <br />
     </div>
 
     <div id="idnavoverlay" onclick="toggleNav();"></div>
@@ -50,7 +53,7 @@
             @RenderBody()
             <hr style="border-top: 2px solid black" />
             <footer>
-                <p style="float:right">Mark&nbsp;Harrison</p>
+                <p style="float:right"><i class='fa fa-github fa-lg fa-fw'></i>&nbsp;<a href="https://github.com/markharrison/coloursweb" target="_blank">Mark&nbsp;Harrison</a></p>
             </footer>
         </div>
     </div>
