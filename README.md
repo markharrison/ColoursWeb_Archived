@@ -2,6 +2,6 @@
 
 ![](docs/imgColourWeb1.png)
 
-Updated to .NET 5.0
+Updated to .NET 6.0
 
 Also see: <https://github.com/markharrison/ColoursAPI>
