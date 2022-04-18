@@ -7,3 +7,5 @@
 Demo: <https://coloursweb.azurewebsites.net>
 
 Also see: <https://github.com/markharrison/ColoursAPI>
+
+[![Container Build & Push - ColoursWeb](https://github.com/markharrison/ColoursWeb/actions/workflows/containerbuildpush.yml/badge.svg)](https://github.com/markharrison/ColoursWeb/actions/workflows/containerbuildpush.yml)
