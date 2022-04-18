@@ -1,6 +1,6 @@
-# ColourWeb
+# ColoursWeb
 
-![](docs/imgColourWeb1.png)
+![](docs/imgColoursWeb1.png)
 
 11 April 2022 : Updated to .NET 6.0
 
