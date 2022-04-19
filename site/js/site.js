@@ -49,9 +49,11 @@ function doDefaultReady() {
     APIMode = decodeURIComponent(readCookie("APIMode"));
     if (APIMode === "Direct") {
         APIUrl = decodeURIComponent(readCookie("APIUrl"));
+        $("#idAPIUrl").html(APIUrl);
     }
     else {
         APIUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + "/getcolour";
+        $("#idAPIUrl").html(APIUrl + " &#10148; " + decodeURIComponent(readCookie("APIUrl")));
     }
         
 
@@ -60,7 +62,7 @@ function doDefaultReady() {
     }
 
     $("#idBalls").append(vHTML);
-    $("#idAPIUrl").html(APIUrl);
+
 
     $(document).ajaxError(
         function (e, x, settings, exception) {
