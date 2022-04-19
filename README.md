@@ -8,4 +8,5 @@ Demo: <https://coloursweb.azurewebsites.net>
 
 Also see: <https://github.com/markharrison/ColoursAPI>
 
-[![Container Build & Push - ColoursWeb](https://github.com/markharrison/ColoursWeb/actions/workflows/containerbuildpush.yml/badge.svg)](https://github.com/markharrison/ColoursWeb/actions/workflows/containerbuildpush.yml)
+[![Container Build & Push - ColoursWeb](https://github.com/markharrison/ColoursWeb/workflows/Container%20Build%20&%20Push%20-%20ColoursWeb/badge.svg)](https://github.com/markharrison/ColoursWeb/actions/workflows/containerbuildpush.yml)
+
