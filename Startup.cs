@@ -15,15 +15,15 @@ namespace ColoursWeb
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            config = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration config { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddSingleton<AppConfig>(new AppConfig(Configuration));
+            services.AddSingleton(new AppConfig(config));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

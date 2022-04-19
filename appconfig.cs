@@ -9,9 +9,9 @@ namespace ColoursWeb
     public class AppConfig
     {
         private string _AdminPWVal;
-        public AppConfig(IConfiguration _config)
+        public AppConfig(IConfiguration config)
         {
-            _AdminPWVal = _config.GetValue<string>("AdminPW");
+            _AdminPWVal = config.GetValue<string>("AdminPW");
         }
  
         public string AdminPW
