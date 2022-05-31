@@ -22,7 +22,12 @@ namespace ColoursWeb
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages()
+                .AddRazorPagesOptions(options =>
+                    {
+                        options.Conventions
+                            .ConfigureFilter(new Microsoft.AspNetCore.Mvc.IgnoreAntiforgeryTokenAttribute());
+                    });
             services.AddSingleton(new AppConfig(config));
         }
 
