@@ -26,7 +26,7 @@ namespace ColoursWeb
                 .AddRazorPagesOptions(options =>
                     {
                         options.Conventions
-                            .ConfigureFilter(new Microsoft.AspNetCore.Mvc.IgnoreAntiforgeryTokenAttribute());
+                            .ConfigureFilter(new Microsoft.AspNetCore.Mvc.IgnoreAntiforgeryTokenAttribute()); 
                     });
             services.AddSingleton(new AppConfig(config));
         }
