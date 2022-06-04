@@ -29,6 +29,7 @@ namespace ColoursWeb.Pages
             strAppConfigInfoHtml += "BuildIdentifier: " + _config.GetValue<string>("BuildIdentifier") + "<br/>";
             strAppConfigInfoHtml += "APIUrl: " + Request.Cookies["APIUrl"] + "<br/>";
             strAppConfigInfoHtml += "APIMode: " + Request.Cookies["APIMode"] + "<br/>";
+            strAppConfigInfoHtml += "Number of Lights: " + Request.Cookies["NumberLights"] + "<br/>";
         }
     }
 }

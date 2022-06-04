@@ -1,6 +1,9 @@
 ﻿var APIUrl = "";
-var iBalls = 500;
+var iNumLights = 500;
 var iMaxPollTimer = 60000;
+var iCalls = 0;
+var vStartTime;
+
 
 function readCookie(name) {
     var nameEQ = name + "=";
@@ -20,8 +23,13 @@ function ColourTrigger(x) {
         global: true,
         success: function (data) {
 
+            iCalls++;
+            var vInterval = Date.now() - vStartTime;
+            var vRate = (1000 * iCalls / vInterval).toFixed(2)
+            $('#idCallsText').html("Calls:&nbsp;" + iCalls + "&nbsp;&nbsp;Rate: " + vRate + " ps");
+
             var colorName = data.name;
-             $('#idBall' + x.toString()).css({ fill: colorName });
+            $('#idLight' + x.toString()).css({ fill: colorName });
 
             var iDelay = Math.ceil(Math.random() * iMaxPollTimer);
             setTimeout(function (xx) { ColourTrigger(xx); }, iDelay, x);
@@ -35,9 +43,10 @@ function doStart() {
     $("#idButStart").hide();
     $("#idButReset").show();
 
-
+    iCalls = 0;
+    vStartTime = Date.now();
     var iDelay = 0;
-    for (var i = 0; i < iBalls; i++) {
+    for (var i = 0; i < iNumLights; i++) {
         iDelay = Math.ceil(Math.random() * iMaxPollTimer);
         setTimeout(function (xx) { ColourTrigger(xx); }, iDelay, i);
     }
@@ -55,13 +64,18 @@ function doDefaultReady() {
         APIUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + "/getcolour";
         $("#idAPIUrl").html(APIUrl + " &#10148; " + decodeURIComponent(readCookie("APIUrl")));
     }
-        
 
-    for (var i = 0; i < iBalls; i++) {
-        vHTML += "<svg height='30' width='30'><circle id='idBall" + i.toString() + "' cx='15' cy='15' r='12' stroke='black' stroke-width='1' fill='white' /></svg>";
+    iNumLights = parseInt(decodeURIComponent(readCookie("NumberLights")));
+    if (isNaN(iNumLights)) {
+        iNumLights = 500;
+        $('#idErrorText').html("Need to configure");
     }
 
-    $("#idBalls").append(vHTML);
+    for (var i = 0; i < iNumLights; i++) {
+        vHTML += "<svg height='30' width='30'><circle id='idLight" + i.toString() + "' cx='15' cy='15' r='12' stroke='black' stroke-width='1' fill='white' /></svg>";
+    }
+
+    $("#idLights").append(vHTML);
 
 
     $(document).ajaxError(
