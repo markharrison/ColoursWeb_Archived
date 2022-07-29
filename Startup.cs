@@ -29,6 +29,8 @@ namespace ColoursWeb
                             .ConfigureFilter(new Microsoft.AspNetCore.Mvc.IgnoreAntiforgeryTokenAttribute());
                     });
             services.AddSingleton(new AppConfig(config));
+
+            services.AddApplicationInsightsTelemetry();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
