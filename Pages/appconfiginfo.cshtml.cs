@@ -39,7 +39,7 @@ namespace ColoursWeb.Pages
             if (_appconfig.AdminPW == HttpContext.Request.Query["pw"].ToString())
             {
                 strHtml += EchoData("ASPNETCORE_ENVIRONMENT", _config.GetValue<string>("ASPNETCORE_ENVIRONMENT"));
-                strHtml += EchoData("PPLICATIONINSIGHTS_CONNECTION_STRING", _config.GetValue<string>("APPLICATIONINSIGHTS_CONNECTION_STRING"));
+                strHtml += EchoData("APPLICATIONINSIGHTS_CONNECTION_STRING", _config.GetValue<string>("APPLICATIONINSIGHTS_CONNECTION_STRING"));
                 strHtml += EchoData("APIUrl", obj2string(Request.Cookies["APIUrl"]));
                 strHtml += EchoData("APIMode", obj2string(Request.Cookies["APIMode"]));
                 strHtml += EchoData("Number of Lights", obj2string(Request.Cookies["NumberLights"]));
