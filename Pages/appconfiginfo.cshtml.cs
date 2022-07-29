@@ -12,24 +12,39 @@ namespace ColoursWeb.Pages
     {
         IConfiguration _config;
         AppConfig _appconfig;
-        public string strAppConfigInfoHtml;
+        public string strHtml;
 
         public AppConfigInfoModel(IConfiguration config, AppConfig appconfig)
         {
             _config = config;
             _appconfig = appconfig;
-            strAppConfigInfoHtml = "";
+            strHtml = "";
         }
         public void OnGet()
         {
-            strAppConfigInfoHtml += "OS Description: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "<br/>";
-            strAppConfigInfoHtml += "Framework Description: " + System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription + "<br/>";
-            strAppConfigInfoHtml += "ASPNETCORE_ENVIRONMENT: " + _config.GetValue<string>("ASPNETCORE_ENVIRONMENT") + "<br/>";
-            strAppConfigInfoHtml += "InstrumentationKey: " + _config.GetValue<string>("ApplicationInsights:InstrumentationKey") + "<br/>";
-            strAppConfigInfoHtml += "BuildIdentifier: " + _config.GetValue<string>("BuildIdentifier") + "<br/>";
-            strAppConfigInfoHtml += "APIUrl: " + Request.Cookies["APIUrl"] + "<br/>";
-            strAppConfigInfoHtml += "APIMode: " + Request.Cookies["APIMode"] + "<br/>";
-            strAppConfigInfoHtml += "Number of Lights: " + Request.Cookies["NumberLights"] + "<br/>";
+            string EchoData(string key, string value)
+            {
+                return key + ": <span style='color: blue'>" + value + "</span><br/>";
+            }
+
+            string obj2string(object obj)
+            {
+                return (obj == null) ? "" : obj.ToString();
+            }
+
+            strHtml += EchoData("OS Description", System.Runtime.InteropServices.RuntimeInformation.OSDescription);
+            strHtml += EchoData("Framework Description", System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);
+            strHtml += EchoData("BuildIdentifier", _config.GetValue<string>("BuildIdentifier"));
+
+            if (_appconfig.AdminPW == HttpContext.Request.Query["pw"].ToString())
+            {
+                strHtml += EchoData("ASPNETCORE_ENVIRONMENT", _config.GetValue<string>("ASPNETCORE_ENVIRONMENT"));
+                strHtml += EchoData("PPLICATIONINSIGHTS_CONNECTION_STRING", _config.GetValue<string>("APPLICATIONINSIGHTS_CONNECTION_STRING"));
+                strHtml += EchoData("APIUrl", obj2string(Request.Cookies["APIUrl"]));
+                strHtml += EchoData("APIMode", obj2string(Request.Cookies["APIMode"]));
+                strHtml += EchoData("Number of Lights", obj2string(Request.Cookies["NumberLights"]));
+ 
+            }
         }
     }
 }
